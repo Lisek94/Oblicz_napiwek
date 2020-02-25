@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import java.text.NumberFormat;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView totalLabelTextView;
     private TextView totalTextView;
+    private Button randomTip;
 
 
     private static final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         totalLabelTextView = findViewById(R.id.totalLabelTextView);
         totalTextView = findViewById(R.id.totalTextView);
+        randomTip = findViewById(R.id.randomTip);
 
         amountEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -87,6 +92,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
+            }
+        });
+
+        randomTip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random random = new Random();
+                int iRandom = random.nextInt(31);
+                tipPercent =  iRandom /100.0;
+                percentSeekBar.setProgress(iRandom);
+                calculateTipAndTotalAmount();
             }
         });
     }

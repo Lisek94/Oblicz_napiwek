@@ -86,4 +86,14 @@
         android:gravity="center"
         android:padding="@dimen/textview_padding"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <Button
+        android:id="@+id/randomTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/random_tip"
+        android:textAllCaps="false"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnSpan="2"
+        android:background="@color/colorPrimary"/>
 </GridLayout>

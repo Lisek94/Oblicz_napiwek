@@ -4,4 +4,5 @@
     <string name="percent">15%</string>
     <string name="tip">Napiwek</string>
     <string name="total">Suma</string>
+    <string name="random_tip">Random Tip</string>
 </resources>
